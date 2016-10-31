@@ -244,6 +244,28 @@ url(r'^login/$', TemplateView.as_view(template_name="login.html"))     //from UR
 {% extends "admin/base_site.html" %}       // all basic setting from same as admin
 
 
+myapp url.py
+
+from django.conf.urls import  include, url
+from django.contrib import admin
+from myapp.views.index import index
+from myapp.views.index import home,login,namedUrl
+from django.conf.urls import include, url
+from . import views
+from django.views.generic import TemplateView
+admin.autodiscover()
+urlpatterns = [
+url(r'^index$', index, name='index'),
+url(r'^home$', home, name='home'),
+url(r'^login$', login, name='login'),
+
+
+url(r'^about/$', TemplateView.as_view(template_name="about.html")),
+url(r'^student/(?P<rollno>[0-9]{2})$', TemplateView.as_view(template_name="about.html")),
+url(r'^login/$', TemplateView.as_view(template_name="login.html")),
+
+]
+
 
 ==============================================================================
  (?P<name>pattern), where name is the name of the group and pattern is some pattern to match.
