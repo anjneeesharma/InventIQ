@@ -357,15 +357,83 @@ first time
     git add  templates/
     git status
     cls
-    git add --all
-    git commit -am "First commit"
+    git add --all      // git add -A
+    git commit -am "First commit"         // -m for message anf -a for all
+    git log     // will give you hash no and history like date Auther comment
     git remote add origin https://github.com/anjneeesharma/InventIQ.git
-    git push -u origin master
+
+    git push origin master           //pushing changes to current repo
+    git push -u origin master/abc    // here -u option tell we want abc branch to link with origin so next time we can do git pull or git push without any option i.e we puhing our abc branch to origin branch but its not merging
+
+  HOW TO MERGE
+  git branch --merged  // will list all merged branch into current branch
+  git checkout master     // if we want to merge into master so go inside it
+  git merge branchName
+  git push origin master   // it means pushing local master to remote master
+  git pull origin master           //update our local repo
+  now delete merged branch coz merged branch no longer needed
+    ignore unwanted file
+
+    touch .gitignore open this file and keep *.pyc  and .js whatever you do not want to commit save and close
+
+
    
    -----------------------------
    second time own word
 
    git add   for undo git reset <file>
+
+    git config --global user.name "anjneesharma"
+    git config --global user.email anjneesharma@gmail.com
+
+     git config --list
+
+    git clone https://github.com/anjneeesharma/InventIQ.git  or git help clone will give you description about
+
+    git tag -l                        // this will show you history 
+
+    git checkout  branchname change   // change branch name
+
+    git show   // will print history
+
+
+    git branch               //list all branches
+    git branch <branch>     // create a new branch named <branch>referencing the same point in history as current branch
+
+    git branch <branch> <start-point>
+
+    git branch -d <branch>  //delete the branch  if not fully merged
+
+    git checkout -b <new> <start-point>  //create a new branch <new> referencing <start-point>, and check it out.
+
+
+    HEAD" can always be used to refer to the current branch
+
+    git checkout  tagName   // can change to tag name also
+
+    git branch -r           // show all remote branch
+
+    git-fetch command, with no arguments // will update exactly from remote to your loacal will not touch your local thing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
