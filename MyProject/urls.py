@@ -1,3 +1,4 @@
+
 """MyProject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -17,23 +18,38 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from django.contrib.auth import views
 from django.views.generic import TemplateView
-from views.view import *
+from views.view import getEmployees,submitaddemployee,editemployee
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^inventq/', include('myapp.urls')),
 
-
-    url(r'^home/$', TemplateView.as_view(template_name="home.html")),
+    # view given by django only we need to import and register
     url(r'^login/$', views.login, {'template_name': 'login.html'},name='login'),
     url(r'^logout/$',views.logout,{'template_name': 'log_out.html'}, name='logout'),
     url('^change-password/$', views.password_change,{'template_name': 'change-password.html'},name='change-password'),
-
-
-    url(r'^getemployees/$', getEmployees,name='getemployee'),
-
-
     url(r'^change-password/$', views.password_change, {'template_name': 'change-password.html'}, name='change-password.html'),
     url(r'^password-change-done/$', views.password_change_done,  {'password-change-done': 'password-change-done.html'}, name='password_change_done'),
+
+    
+    # Develop URL for specific need
+    url(r'^home/$', TemplateView.as_view(template_name="home.html")),
+    url(r'^getemployees/$', getEmployees,name='getemployee'),
+    url(r'^addemployee/$', TemplateView.as_view(template_name="addemployee.html")),
+    url(r'^editemployee/$', editemployee, name="editemployee"),
+    #url(r'^submiteditemployee/$', submiteditemployee,name="submiteditemployee"),
+    url(r'^submitaddemployee/$', submitaddemployee,name="submitaddemployee"),
+
+    
     
 ]
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,5 @@
+
+
 """
 Django settings for MyProject project.
 
@@ -27,6 +29,74 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 LOGIN_REDIRECT_URL = '/home' # It means home view
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': True,
+    'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+    },
+    'handlers': {
+        'default': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': 'mylog.log',
+            'maxBytes': 1024*1024*5, # 5 MB
+            'backupCount': 5,
+            'formatter':'standard',
+        },  
+        'request_handler': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': 'mylog.log',
+            'maxBytes': 1024*1024*5, # 5 MB
+            'backupCount': 5,
+            'formatter':'standard',
+        },
+    },
+    # use "django" MyProject.views it will catch all the log  and django.request Log messages related to the handling of requests
+    # same as "status_code"  "request"  django.server  catch all coming from python manage.py runserver ,django.template,  
+    'loggers': {
+        'MyProject.views': {                       
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+        'django.request': {
+            'handlers': ['request_handler'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+
+        'django': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+
+        'request': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+
+        'django.server': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        'django.template': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+        
+    }
+}
+
+
 
 # Application definition
 

@@ -1,0 +1,39 @@
+{% if success  %}
+<h4 style="color:green;">Employee Edited Successfully</h4>           
+{% elif failed %}
+<h4 style="color:red;">There is some problem while Editting employee</h4>
+{% endif %}
+
+<FORM  ACTION="/submiteditemployee">
+<TABLE BORDER="1">
+<TR>
+    <TD>ID</TD>
+    <TD><INPUT TYPE="TEXT" NAME="ID" SIZE="25"  value = {{employee.id}}></TD>
+  </TR>
+  <TR>
+    <TD>Name</TD>
+    <TD>
+      <INPUT TYPE="TEXT" NAME="name" SIZE="20" value = {{employee.name}}>
+    </TD>
+  </TR>
+  <TR>
+    <TD>E-mail</TD>
+    <TD><INPUT TYPE="email" NAME="email" SIZE="25" value = {{employee.email}}></TD>
+  </TR>
+  <TR>
+    <TD>Address</TD>
+    <TD><INPUT TYPE="TEXT" NAME="address" SIZE="25" value = {{employee.address}}></TD>
+  </TR>
+  <TR>
+    <TD>Mobile</TD>
+    <TD><INPUT TYPE="number" NAME="mobile" SIZE="25" value = {{employee.mobile}}></TD>
+  </TR>
+  <TR>
+    <TD>Designation</TD>
+    <TD><INPUT TYPE="TEXT" NAME="designation" SIZE="25"  value = {{employee.designation}}></TD>
+  </TR>
+
+  
+</TABLE>
+<P><INPUT TYPE="SUBMIT" VALUE="Submit" NAME="B1"></P>
+</FORM>

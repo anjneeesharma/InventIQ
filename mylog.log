@@ -1,0 +1,40 @@
+2016-11-05 21:40:01,572 [DEBUG] django.db.backends: (0.003) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'xx4ygtwgrbuhf2ggl1dab8h48cphyi2k' AND "django_session"."expire_date" > '2016-11-05T16:10:01.536000+00:00'::timestamptz); args=('xx4ygtwgrbuhf2ggl1dab8h48cphyi2k', datetime.datetime(2016, 11, 5, 16, 10, 1, 536000, tzinfo=<UTC>))
+2016-11-05 21:40:01,578 [DEBUG] django.db.backends: (0.003) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+2016-11-05 21:40:01,578 [DEBUG] MyProject.views.view: ========================================================%%%%%%%%%%
+2016-11-05 21:40:01,578 [INFO] MyProject.views.view: Something went wrong!
+2016-11-05 21:40:01,578 [INFO] MyProject.views.view: ========================================================%%%%%%%%%%%
+2016-11-05 21:40:01,585 [DEBUG] django.template: Exception while resolving variable 'success' in template 'editemployee.html'.
+Traceback (most recent call last):
+  File "C:\Users\anjnee\Desktop\InventQ\myvirtual\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [success] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x02766470>>, 'user': <SimpleLazyObject: <User: anjnee>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x027716F0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0270A510>, u'request': <WSGIRequest: GET '/editemployee/?id=15%20name=mohan%20email=anjnee.k.sharma@gmail.com%20address=Datia%20mobile=9691764190%20%20designation=policee'>}, {}, {'employee': {'name': u'mohan', 'designation': u'policee', 'mobile': u'9691764190', 'id': u'15', 'address': u'Datia', 'email': u'anjnee.k.sharma@gmail.com'}}]"
+2016-11-05 21:40:01,585 [DEBUG] django.template: Exception while resolving variable 'failed' in template 'editemployee.html'.
+Traceback (most recent call last):
+  File "C:\Users\anjnee\Desktop\InventQ\myvirtual\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [failed] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x02766470>>, 'user': <SimpleLazyObject: <User: anjnee>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x027716F0>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x0270A510>, u'request': <WSGIRequest: GET '/editemployee/?id=15%20name=mohan%20email=anjnee.k.sharma@gmail.com%20address=Datia%20mobile=9691764190%20%20designation=policee'>}, {}, {'employee': {'name': u'mohan', 'designation': u'policee', 'mobile': u'9691764190', 'id': u'15', 'address': u'Datia', 'email': u'anjnee.k.sharma@gmail.com'}}]"
+2016-11-05 21:40:01,586 [INFO] django.server: "GET /editemployee/?id=15%20name=mohan%20email=anjnee.k.sharma@gmail.com%20address=Datia%20mobile=9691764190%20%20designation=policee HTTP/1.1" 200 806
+2016-11-05 21:40:13,009 [DEBUG] django.db.backends: (0.003) 
+            SELECT c.relname, c.relkind
+            FROM pg_catalog.pg_class c
+            LEFT JOIN pg_catalog.pg_namespace n ON n.oid = c.relnamespace
+            WHERE c.relkind IN ('r', 'v')
+                AND n.nspname NOT IN ('pg_catalog', 'pg_toast')
+                AND pg_catalog.pg_table_is_visible(c.oid); args=None
+2016-11-05 21:40:13,013 [DEBUG] django.db.backends: (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+2016-11-05 21:40:19,355 [DEBUG] django.db.backends: (0.004) SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."session_key" = 'xx4ygtwgrbuhf2ggl1dab8h48cphyi2k' AND "django_session"."expire_date" > '2016-11-05T16:10:19.308000+00:00'::timestamptz); args=('xx4ygtwgrbuhf2ggl1dab8h48cphyi2k', datetime.datetime(2016, 11, 5, 16, 10, 19, 308000, tzinfo=<UTC>))
+2016-11-05 21:40:19,361 [DEBUG] django.db.backends: (0.003) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+2016-11-05 21:40:19,361 [DEBUG] MyProject.views.view: ========================================================%%%%%%%%%%
+2016-11-05 21:40:19,361 [INFO] MyProject.views.view: Something went wrong!
+2016-11-05 21:40:19,361 [INFO] MyProject.views.view: ========================================================%%%%%%%%%%%
+2016-11-05 21:40:19,368 [DEBUG] django.template: Exception while resolving variable 'success' in template 'editemployee.html'.
+Traceback (most recent call last):
+  File "C:\Users\anjnee\Desktop\InventQ\myvirtual\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [success] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x02A23470>>, 'user': <SimpleLazyObject: <User: anjnee>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x02A2C710>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x029C6510>, u'request': <WSGIRequest: GET '/editemployee/?id=10%20name=abc%20email=anjneesharma@gmail.com%20address=datia%20mobile=8884875000%20%20designation=SE'>}, {}, {'employee': {'name': u'abc', 'designation': u'SE', 'mobile': u'8884875000', 'id': u'10', 'address': u'datia', 'email': u'anjneesharma@gmail.com'}}]"
+2016-11-05 21:40:19,368 [DEBUG] django.template: Exception while resolving variable 'failed' in template 'editemployee.html'.
+Traceback (most recent call last):
+  File "C:\Users\anjnee\Desktop\InventQ\myvirtual\lib\site-packages\django\template\base.py", line 907, in _resolve_lookup
+    (bit, current))  # missing attribute
+VariableDoesNotExist: Failed lookup for key [failed] in u"[{'False': False, 'None': None, 'True': True}, {u'csrf_token': <SimpleLazyObject: <function _get_val at 0x02A23470>>, 'user': <SimpleLazyObject: <User: anjnee>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x02A2C710>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'WARNING': 30, 'SUCCESS': 25, 'ERROR': 40}, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x029C6510>, u'request': <WSGIRequest: GET '/editemployee/?id=10%20name=abc%20email=anjneesharma@gmail.com%20address=datia%20mobile=8884875000%20%20designation=SE'>}, {}, {'employee': {'name': u'abc', 'designation': u'SE', 'mobile': u'8884875000', 'id': u'10', 'address': u'datia', 'email': u'anjneesharma@gmail.com'}}]"
+2016-11-05 21:40:19,371 [INFO] django.server: "GET /editemployee/?id=10%20name=abc%20email=anjneesharma@gmail.com%20address=datia%20mobile=8884875000%20%20designation=SE HTTP/1.1" 200 796

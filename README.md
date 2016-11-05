@@ -420,6 +420,87 @@ first time
 
 
 
+===========================================================================
+DJANGO LOGGING/
+ SETTING 
+
+https://docs.djangoproject.com/en/1.10/topics/logging/
+Django uses Python’s builtin logging module to perform system logging someframworks use its own logging module
+
+Its have 4 parts
+
+
+
+
+Loggers   named bucket to which messages can be written for processing.  specific file whom logger should be enabled
+    it have log leve
+        lDEBUG
+        INFO: 
+        WARNING
+        ERROR
+        CRITICAL
+ 
+Handlers  it is the engine that determines what happens to each message in a logger when what where to write log
+          A logger can have multiple handlers, and each handler can have a different log level.
+
+Filters  its filter between logger & hander witch log is to pass from logger to hander to write somewhere(additional criteria) it cac modify record befor sending to handler
+
+
+Formatters  describe the exact format of log 
+
+CONCLUSION===>
+     formatters===>  we will define format and all date and time. this will be on first position
+
+        example  
+
+            'formatters': {
+        'standard': {
+            'format': '%(asctime)s [%(levelname)s] %(name)s: %(message)s'
+        },
+    },
+
+
+   here formater name is "standard" we can give any name or you can define more than one formatter or can use them in different  different  handler you can define different different handler and you can use them in different different
+   logger
+
+
+
+HANDLER   this will be on 2nd position coz it use formatter we csn give any name here we have given "default"
+
+
+'handlers': {
+        'default': {
+            'level':'DEBUG',
+            'class':'logging.handlers.RotatingFileHandler',
+            'filename': 'mylog.log',
+            'maxBytes': 1024*1024*5, # 5 MB
+            'backupCount': 5,
+            'formatter':'standard',                           // here we are using
+        },
+
+
+
+
+LOGGER====> Tish will be on 3rd position and it will be using handler we decide in logger for which file we want to print log  "MyProject.views"  for this file we want to print log or you define "django" it will catch all logger 
+and using "django.server" we can combine log in one place i.e it will sent server log also in mylog file 
+
+
+'loggers': {
+        'MyProject.views': {
+            'handlers': ['default'],
+            'level': 'DEBUG',
+            'propagate': True
+        },
+
+
+
+
+if we will set this option this will deactivate all log none of the log will print
+LOGGING_CONFIG = None
+
+
+
+===================================================================================
 
 
 
