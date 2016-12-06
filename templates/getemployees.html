@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Employee List</title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 <body bgcolor="#E6E6FA">
 <table border="1">
@@ -22,8 +23,39 @@
      <td>{{emp.address}}</td>
      <td>{{emp.mobile}}</td>
      <td>{{emp.designation}}</td>
-     </tr>    
+     </tr>
 {% endfor %}
  </table>
+  <div class="pagination">
+    <span class="step-links">
+        {% if employess.has_previous %}
+            <a href="?page={{ employess.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ employess.number }} of {{ employess.paginator.num_pages }}.
+        </span>
+
+        {% if employess.has_next %}
+            <a href="?page={{ employess.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div> <br>
+ <input type="text" name="searchbox" placeholder="Search.." value=''> 
+<button onclick="mySearch()">Search Employee</button>
+ 
+ 
+<script>
+function mySearch() {
+    alert('hello')
+    
+}
+</script>
+
 </body>
 </html>
+
+
+
+
+
