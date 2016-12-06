@@ -18,7 +18,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from django.contrib.auth import views
 from django.views.generic import TemplateView
-from views.view import getEmployees,submitaddemployee,editemployee
+from views.view import getEmployees,submitaddemployee,editemployee,submiteditemployee,searchemployee,submitregisteruser
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -34,12 +34,25 @@ urlpatterns = [
     
     # Develop URL for specific need
     url(r'^home/$', TemplateView.as_view(template_name="home.html")),
+    #url(r'^searchemployee/$',TemplateView.as_view(template_name="searchemployee.html")),
+    url(r'^searchemployee/$',searchemployee,name='searchemployee'),
     url(r'^getemployees/$', getEmployees,name='getemployee'),
     url(r'^addemployee/$', TemplateView.as_view(template_name="addemployee.html")),
     url(r'^editemployee/$', editemployee, name="editemployee"),
-    #url(r'^submiteditemployee/$', submiteditemployee,name="submiteditemployee"),
+    url(r'^submiteditemployee/$', submiteditemployee,name="submiteditemployee"),
     url(r'^submitaddemployee/$', submitaddemployee,name="submitaddemployee"),
-
+    url(r'^registeruser/$',TemplateView.as_view(template_name="registeruser.html")),
+    url(r'^submitregisteruser/$',submitregisteruser,name="submitregisteruser"),
     
     
 ]
+
+
+
+
+
+
+
+
+
+

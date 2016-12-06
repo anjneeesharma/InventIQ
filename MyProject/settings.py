@@ -70,6 +70,12 @@ LOGGING = {
             'propagate': False
         },
 
+        'MyProject.model': {
+            'handlers': ['request_handler'],
+            'level': 'DEBUG',
+            'propagate': False
+        },
+
         'django': {
             'handlers': ['default'],
             'level': 'DEBUG',
@@ -96,9 +102,12 @@ LOGGING = {
     }
 }
 
-
-
-# Application definition
+#this setting is needed  for  send email
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#host="smtp.mail.yahoo.com"
+#port="465"
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+#Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -108,7 +117,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'django.contrib.sites',
 ]
+SITE_ID=1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
