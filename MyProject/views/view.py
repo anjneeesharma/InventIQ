@@ -57,9 +57,6 @@ def editemployee(request):
 	employee['designation'] = emp.designation
 	return  render(request,"editemployee.html",{'employee':employee})
 
-
-
-
 @login_required(login_url="/login/")
 def submiteditemployee(request):
 	eid          = request.GET['ID']
