@@ -4,7 +4,6 @@ from django.db.models import Q
 import logging
 logger = logging.getLogger(__name__)
 
-
 def getEmployee(eid = None):
 	if eid:
 		queryset = Employee.objects.get(id=eid)

@@ -13,7 +13,11 @@ logger = logging.getLogger(__name__)
 
 @login_required(login_url="/login/")
 def getEmployees(request):
-	employess = models.getEmployee().order_by('id')
+	orderBy = request.GET.get('orderBy')
+	if orderBy:
+		employess = models.getEmployee().order_by(orderBy)
+	else:
+		employess = models.getEmployee().order_by('id')
 	page = request.GET.get('page')
 	try:
 		paginator = Paginator(employess, 5)

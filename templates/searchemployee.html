@@ -24,6 +24,20 @@
      <td>{{emp.designation}}</td>
      </tr>    
 {% endfor %}
- </table>
+ </table><br>
+
+<input type="text" id="searchbox" placeholder="Search.." value=''>
+<button id="mySearch" onclick="searchemployee()">Search Employee</button>
+<button > <a href="/getemployees/">Show All Employees</a> </button></br>
+
+<script>
+function searchemployee() {
+        var Searchtxt = document.getElementById("searchbox").value;
+        window.location = "http://127.0.0.1:8000/searchemployee/?searchKey=" + Searchtxt;
+}
+
+</script>
+
+
 </body>
 </html>

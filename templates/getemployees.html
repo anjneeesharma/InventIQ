@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
 	<title>Employee List</title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
-<body bgcolor="#E6E6FA">
-<table border="1">
+<br bgcolor="#E6E6FA">
+<table border="1" id="tabledata">
 <tr>
     <th>ID</th>
-    <th>Name</th>
-    <th>Emails</th> 
-    <th>Address</th>
-    <th>Mobile</th>
-    <th>Designation</th>
+    <th> <a href="/getemployees/?orderBy=name">Name</a></th>
+    <th> <a href="/getemployees/?orderBy=email">Emails</a></th>
+    <th> <a href="/getemployees/?orderBy=address">Address</a></th>
+    <th> <a href="/getemployees/?orderBy=mobile">Mobile</a></th>
+    <th> <a href="/getemployees/?orderBy=designation">Designation</a></th>
   </tr>
   <tr>
 {% for emp in employess %}
      <tr>
-    <td> <a href="/editemployee?id={{emp.id}} name={{emp.name}} email={{emp.email}} address={{emp.address}} mobile={{emp.mobile}}  designation={{emp.designation}}">{{emp.id}}</a></td>
+    <td> <a href="/editemployee?id={{emp.id}}">{{emp.id}}</a></td>
      <td>{{emp.name}} </td>
      <td>{{emp.email}}</td>
      <td>{{emp.address}}</td>
@@ -27,35 +27,36 @@
 {% endfor %}
  </table>
   <div class="pagination">
-    <span class="step-links">
+</div> <br>
+
+<span class="step-links">
         {% if employess.has_previous %}
             <a href="?page={{ employess.previous_page_number }}">previous</a>
         {% endif %}
 
-        <span class="current">
+    <span class="current">
             Page {{ employess.number }} of {{ employess.paginator.num_pages }}.
         </span>
 
-        {% if employess.has_next %}
-            <a href="?page={{ employess.next_page_number }}">next</a>
-        {% endif %}
-    </span>
-</div> <br>
- <input type="text" name="searchbox" placeholder="Search.." value=''> 
-<button onclick="mySearch()">Search Employee</button>
- 
- 
+    {% if employess.has_next %}
+        <a href="?page={{ employess.next_page_number }}">next</a>
+    {% endif %}
+
+
+    </span></br></br>
+
+<input type="text" id="searchbox" placeholder="Search.." value=''>
+<button id="mySearch" onclick="searchemployee()">Search Employee</button>
+<button > <a href="/addemployee/">Add New Employees</a> </button></br>
+
+
 <script>
-function mySearch() {
-    alert('hello')
-    
+function searchemployee() {
+        var Searchtxt = document.getElementById("searchbox").value;
+        window.location = "http://127.0.0.1:8000/searchemployee/?searchKey=" + Searchtxt;
 }
+
 </script>
 
 </body>
 </html>
-
-
-
-
-
